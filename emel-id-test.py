@@ -5,7 +5,6 @@ import os
 
 # Setup
 app = Flask(__name__)
-app.secret_key = "hush dont tell anyone"
 
 # Home page
 @app.route("/")
