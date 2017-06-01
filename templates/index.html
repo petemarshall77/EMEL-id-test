@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.emel_id_logged_in %}
+<p>Congratulations, you are logged in. Here's a kitten</p>
+  <img src="static/kitten.jpg">
+  {% else %}
+      <p>Welcome. To see the content of this site you must log in</p>    
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+<!doctype html>
+<title>EMEL-ID Test</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="page">
+  <h1>EMEL-ID Tester</h1>
+  <div class="metanav">
+  {% if not session.emel_id_logged_in %}
+    <a href="{{ url_for('do_login') }}">log in</a>
+  {% else %}
+    {{ session.emel_id_handle }}
+    <a href="{{ url_for('do_logout') }}">log out</a>
+  {% endif %}
+  </div>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>
